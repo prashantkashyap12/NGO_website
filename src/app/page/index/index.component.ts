@@ -13,7 +13,7 @@ export class IndexComponent {
 
   constructor(){}
   ngOnInit(){}
-
+  
   
   newsletter = [
     {sr:'1', url:'', heading:'On 4th May 2025, Helping Hand Sanstha is organizing a Health Camp event.', date:'04-05-2024'},
@@ -22,7 +22,21 @@ export class IndexComponent {
     {sr:'5', url:'', heading:'Our upcoming meeting will focus on planning new initiatives and strengthening our projects.', date:'Comming Soon'},
   ]
 
+  // Marquee PLAY / PUSH  -- Open
+  stopScrolling() {
+    const marquee = document.querySelector('.marquee-content') as HTMLElement;
+    if (marquee) {
+      marquee.style.animationPlayState = 'paused';  // Pause the scrolling
+    }
+  }
 
+  startScrolling() {
+    const marquee = document.querySelector('.marquee-content') as HTMLElement;
+    if (marquee) {
+      marquee.style.animationPlayState = 'running';  // Resume the scrolling
+    }
+  }
+  // Marquee PLAY / PUSH -- Close
 
 
 }
